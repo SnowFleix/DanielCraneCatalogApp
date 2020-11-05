@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:effect="clr-namespace:DanielCraneCatalogApp.Effects;assembly=DanielCraneCatalogApp" 
+             xmlns:ff="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" 
+             mc:Ignorable="d"
+             x:Class="DanielCraneCatalogApp.Pages.Components.ContentPage">
+    
+    <ContentPage.Content>
+        <ScrollView x:Name="ScrollWrapper" HorizontalOptions="Start" VerticalOptions="Start">
+            <Grid x:Name="ContentWrappper">
+                <StackLayout x:Name="CoverWrapper" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <RelativeLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <Image x:Name="BackgroundImage" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}" VerticalOptions="FillAndExpand" Aspect="AspectFill"/>
+                        <Grid x:Name="MainContainer" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}">
+                            <Grid.Effects>
+                                <effect:SafePadding />
+                            </Grid.Effects>
+                            <Grid.Padding>
+                                <OnPlatform x:TypeArguments="Thickness">
+                                    <On Platform="Android" Value="0,0,0,40" />
+                                </OnPlatform>
+                            </Grid.Padding>
+                            <RelativeLayout VerticalOptions="FillAndExpand">
+                                <StackLayout RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=0.65,Constant=0}" Margin="20,0">
+                                    <!--The title of the -->
+                                    <Label Text="{Binding Title}" FontSize="36" TextColor="White" FontFamily="{StaticResource font_black}" Margin="0,0,0,8" />
+                                    <RelativeLayout VerticalOptions="FillAndExpand">
+                                        <!--The small description-->
+                                        <Label HeightRequest="80" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width,Factor=.75,Constant=0}" LineBreakMode="WordWrap" Text="{Binding ShortDescription}" FontFamily="{StaticResource font_normal}" FontSize="20" TextColor="White" />
+                                    </RelativeLayout>
+                                </StackLayout>
+                            </RelativeLayout>
+                            <Label Text="Scroll to know more" FontSize="12" TextColor="DarkGray" FontFamily="{StaticResource font_normal}" VerticalOptions="EndAndExpand" HorizontalOptions="Center" HorizontalTextAlignment="Center" />
+                        </Grid>
+                    </RelativeLayout>
+                </StackLayout>
+                <StackLayout x:Name="DataWrapper" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="0,0,0,20">
+                    <Label Text="{Binding DataTitle}" FontSize="24" TextColor="Black" FontFamily="{StaticResource font_black}" Margin="0,0,0,0" />
+                    <StackLayout Orientation="Horizontal">
+                        <Image x:Name="PaintingImage" />
+                        <Label Text="{Binding DataDescription}" Margin="0,12,0,0" FontSize="16" TextColor="Black" FontFamily="{StaticResource font_black}" />
+                    </StackLayout>
+                    <Label Text="{Binding DataLongDescription}" Margin="0,12,0,0" FontSize="16" TextColor="Black" FontFamily="{StaticResource font_black}" />
+                    <StackLayout Orientation="Horizontal">
+                        <ff:CachedImage Source="{Binding DataImageSource}" HeightRequest="96" WidthRequest="96" Margin="0,0,20,0" />
+                        <Label LineHeight="1.5" TextColor="#8c91ab" FontSize="13" VerticalOptions="Center" VerticalTextAlignment="Center" FontFamily="{StaticResource font_normal}" Text="{Binding PortfolioDescription}" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" >
+                        <Label Text="{Binding DataPrice}" LineHeight="1.5" TextColor="#8c91ab" FontSize="13" VerticalOptions="Center" VerticalTextAlignment="Center" FontFamily="{StaticResource font_normal}" />
+                        <Button Text="Buy Now" FontFamily="{StaticResource font_normal}"/>
+                    </StackLayout>
+                    <!--Put socials and other info here-->
+                </StackLayout>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
