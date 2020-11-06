@@ -4,13 +4,14 @@ using System.Text;
 
 namespace DanielCraneCatalogApp
 {
-    class ContentPageModel
+    public class ContentPageModel
     {
         public string Title { get; set; }
+        public string BackgroundImage { get; set; }
         public string DataTitle { get; set; }
         public string DataDescription { get; set; }
         public string DataLongDescription { get; set; }
-        public string DataImageSourve { get; set; }
+        public string DataImageSource { get; set; }
         public string DataPrice { get; set; }
     }
 }

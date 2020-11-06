@@ -12,6 +12,20 @@ namespace DanielCraneCatalogApp
             List<ContentPage> pages = new List<ContentPage>(0);
             // implement a feature to add new pages from the database to here
 
+            ContentPageModel content = new ContentPageModel();
+
+            content.Title = "Example title";
+            content.BackgroundImage = "TestImage.png";
+            content.DataTitle = "This is a title";
+            content.DataDescription = "This is an example of a description";
+            content.DataLongDescription = "This is a very long description about the image to the left which is kind of important";
+            content.DataImageSource = "TestImage.jpg";
+            content.DataPrice = "£100.00";
+            
+            for (int i =0; i < 5; i++) {
+                pages.Add(new MainContentPage(content));
+            }
+
             InitializeComponent();
 
             CarouselPage MainContent = new CarouselPage();
