@@ -11,10 +11,10 @@
     <ContentPage.Content>
         <ScrollView x:Name="ScrollWrapper" HorizontalOptions="Start" VerticalOptions="Start">
             <Grid x:Name="ContentWrappper">
-                <StackLayout x:Name="CoverWrapper" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <StackLayout Grid.Row="0" x:Name="CoverWrapper" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
                     <RelativeLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-                        <Image x:Name="BackgroundImage" Source="{Binding BackgroundImage}" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}" VerticalOptions="Fill" Aspect="AspectFit"/>
-                        <Grid x:Name="MainContainer" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}">
+                        <Image x:Name="BackgroundImage" Source="{Binding BackgroundImage}" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}" VerticalOptions="FillAndExpand" Aspect="AspectFit"/>
+                        <Grid x:Name="MainContainer" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}" >
                             <Grid.Effects>
                                 <effect:SafePadding />
                             </Grid.Effects>
@@ -27,7 +27,7 @@
                                 <StackLayout RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=0.65,Constant=0}" Margin="20,0">
                                     <!--The title of the -->
                                     <Label Text="{Binding Title}" FontSize="36" TextColor="White" Margin="0,0,0,8" />
-                                    <RelativeLayout VerticalOptions="FillAndExpand">
+                                    <RelativeLayout RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=0.65,Constant=0}" VerticalOptions="FillAndExpand">
                                         <!--The small description-->
                                         <Label HeightRequest="80" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width,Factor=.75,Constant=0}" LineBreakMode="WordWrap" Text="{Binding ShortDescription}" FontSize="20" TextColor="White" />
                                     </RelativeLayout>
@@ -37,7 +37,7 @@
                         </Grid>
                     </RelativeLayout>
                 </StackLayout>
-                <StackLayout x:Name="DataWrapper" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="0,0,0,20">
+                <StackLayout Grid.Row="1" x:Name="DataWrapper" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="0,0,0,20">
                     <Label Text="{Binding DataTitle}" FontSize="24" TextColor="Black" Margin="0,0,0,0" />
                     <StackLayout Orientation="Horizontal">
                         <Image x:Name="PaintingImage" />

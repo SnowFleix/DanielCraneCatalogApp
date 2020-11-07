@@ -15,12 +15,12 @@ namespace DanielCraneCatalogApp
             ContentPageModel content = new ContentPageModel();
 
             content.Title = "Example title";
-            content.BackgroundImage = "TestImage.png";
+            content.BackgroundImage = "SampleImage.png";
             content.ShortDescription = "Description of the image";
             content.DataTitle = "This is a title";
             content.DataDescription = "This is an example of a description";
             content.DataLongDescription = "This is a very long description about the image to the left which is kind of important";
-            content.DataImageSource = "TestImage.jpg";
+            content.DataImageSource = "StockImage.jpg";
             content.DataPrice = "£100.00";
             
             for (int i = 0; i < 5; i++) {

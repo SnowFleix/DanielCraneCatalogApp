@@ -101,7 +101,9 @@
       <Name>DanielCraneCatalogApp</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\StockImage.png" />
+  </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-mdpi\TestImage.png" />
   </ItemGroup>
@@ -117,10 +119,46 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\TestImage.png" />
   </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\StockImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-mdpi\StockImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\StockImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\StockImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\StockImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Renderers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\SampleImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\SampleImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\drawable-mdpi\SampleImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\drawable-xhdpi\SampleImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\drawable-xxhdpi\SampleImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\drawable-xxxhdpi\SampleImage.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties XamarinHotReloadDebuggerTimeoutExceptionDanielCraneCatalogAppAndroidHideInfoBar="True" />
+      <UserProperties XamarinHotReloadDebuggerExceptionDanielCraneCatalogAppAndroidHideInfoBar="True" XamarinHotReloadDebuggerTimeoutExceptionDanielCraneCatalogAppAndroidHideInfoBar="True" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>
