@@ -8,6 +8,7 @@ namespace DanielCraneCatalogApp
     {
         public string Title { get; set; }
         public string BackgroundImage { get; set; }
+        public string ShortDescription { get; set; }
         public string DataTitle { get; set; }
         public string DataDescription { get; set; }
         public string DataLongDescription { get; set; }
