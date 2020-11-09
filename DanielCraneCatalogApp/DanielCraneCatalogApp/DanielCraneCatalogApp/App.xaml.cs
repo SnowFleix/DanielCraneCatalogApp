@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+using System.Reflection;
 using System.Collections.Generic;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -7,6 +9,15 @@ namespace DanielCraneCatalogApp
 {
     public partial class App : Application
     {
+        public static string ResourcePrefix = "";
+
+#if __IOS__
+		public static string ResourcePrefix = "XamFormsImageResize.iOS.";
+#endif
+#if __ANDROID__
+		public static string ResourcePrefix = "XamFormsImageResize.Android.";
+#endif
+
         public App()
         {
             List<ContentPage> pages = new List<ContentPage>(0);
@@ -39,15 +50,12 @@ namespace DanielCraneCatalogApp
         }
 
         protected override void OnStart()
-        {
-        }
+        { }
 
         protected override void OnSleep()
-        {
-        }
+        { }
 
         protected override void OnResume()
-        {
-        }
+        { }
     }
 }
