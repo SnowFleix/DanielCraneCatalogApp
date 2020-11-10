@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+using System.Reflection;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,31 +17,46 @@ namespace DanielCraneCatalogApp
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MainContentPage : ContentPage
     {
+        public static string ResourcePrefix = "";
+
+#if __IOS__
+		public static string ResourcePrefix = "XamFormsImageResize.iOS.";
+#endif
+#if __ANDROID__
+		public static string ResourcePrefix = "XamFormsImageResize.Android.";
+#endif
+
+        async void ResizeImage(double height, double width)
+        {
+            var assembly = typeof(MainContentPage).GetTypeInfo().Assembly;
+            byte[] imageData;
+
+            Stream stream = assembly.GetManifestResourceStream(ResourcePrefix + "OriginalImage.JPG");
+            using (MemoryStream ms = new MemoryStream())
+            {
+                stream.CopyTo(ms);
+                imageData = ms.ToArray();
+            }
+
+            // c-style casting is usually bad, change later
+            byte[] resizedImage = await ImageResizer.ResizeImage(imageData, (float)width, (float)height);
+
+
+            BackgroundImage.Source = ImageSource.FromStream(() => new MemoryStream(resizedImage));
+        }
+
         public MainContentPage(ContentPageModel content)
         {
             InitializeComponent();
             this.BindingContext = content;
 
-            CoverWrapper.HeightRequest = DeviceDisplay.MainDisplayInfo.Height / DeviceDisplay.MainDisplayInfo.Density;
-            CoverWrapper.WidthRequest = DeviceDisplay.MainDisplayInfo.Width / DeviceDisplay.MainDisplayInfo.Density;
+            double deviceWidth = DeviceDisplay.MainDisplayInfo.Width / DeviceDisplay.MainDisplayInfo.Density;
+            double deviceHeight = DeviceDisplay.MainDisplayInfo.Height / DeviceDisplay.MainDisplayInfo.Density;
 
-            protected async void ResizeImage()
-            {
-                var assembly = typeof(HomePage).GetTypeInfo().Assembly;
-                byte[] imageData;
+            CoverWrapper.HeightRequest = deviceHeight;
+            CoverWrapper.WidthRequest = deviceWidth;
 
-                Stream stream = assembly.GetManifestResourceStream(ResourcePrefix + "OriginalImage.JPG");
-                using (MemoryStream ms = new MemoryStream())
-                {
-                    stream.CopyTo(ms);
-                    imageData = ms.ToArray();
-                }
-
-                byte[] resizedImage = await ImageResizer.ResizeImage(imageData, 400, 400);
-
-
-                this._photo.Source = ImageSource.FromStream(() => new MemoryStream(resizedImage));
-            }
+            //ResizeImage()
 
             //DataWrapper.HeightRequest = i;
             // this is what you would call, a last ditch effort
