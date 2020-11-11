@@ -13,7 +13,7 @@
             <Grid x:Name="ContentWrappper">
                 <StackLayout Grid.Row="0" x:Name="CoverWrapper" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
                     <RelativeLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-                        <Image x:Name="BackgroundImage" Source="{Binding BackgroundImage}" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}" VerticalOptions="FillAndExpand" Aspect="AspectFit"/>
+                        <Image x:Name="BackgroundImage" Source="{Binding BackgroundImage}" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}" VerticalOptions="FillAndExpand" Aspect="AspectFill"/>
                         <Grid x:Name="MainContainer" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}" >
                             <Grid.Effects>
                                 <effect:SafePadding />
@@ -33,24 +33,24 @@
                                     </RelativeLayout>
                                 </StackLayout>
                             </RelativeLayout>
-                            <Label Text="Scroll to know more" FontSize="12" TextColor="DarkGray" VerticalOptions="EndAndExpand" HorizontalOptions="Center" HorizontalTextAlignment="Center" />
+                            <Label Text="Scroll to know more" Padding="0,0,0,50" FontSize="12" TextColor="White" VerticalOptions="EndAndExpand" HorizontalOptions="Center" HorizontalTextAlignment="Center" />
                         </Grid>
                     </RelativeLayout>
                 </StackLayout>
                 <StackLayout Grid.Row="1" x:Name="DataWrapper" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="0,0,0,20">
-                    <Label Text="{Binding DataTitle}" FontSize="24" TextColor="Black" Margin="0,0,0,0" />
+                    <Label Text="{Binding DataTitle}" FontSize="24" TextColor="Black" Margin="0,15,0,0" HorizontalOptions="Center" />
                     <StackLayout Orientation="Horizontal">
-                        <Image x:Name="PaintingImage" />
-                        <Label Text="{Binding DataDescription}" Margin="0,12,0,0" FontSize="16" TextColor="Black" />
+                        <Image x:Name="PaintingImage" HorizontalOptions="CenterAndExpand"/>
+                        <Label Text="{Binding DataDescription}" Margin="0,12,0,0" FontSize="24" TextColor="Black" HorizontalTextAlignment="Center" />
                     </StackLayout>
-                    <Label Text="{Binding DataLongDescription}" Margin="0,12,0,0" FontSize="16" TextColor="Black" />
+                    <Label Text="{Binding DataLongDescription}" Margin="0,20,0,0" FontSize="16" TextColor="Black" />
                     <StackLayout Orientation="Horizontal">
-                        <ff:CachedImage Source="{Binding DataImageSource}" HeightRequest="96" WidthRequest="96" Margin="0,0,20,0" />
-                        <Label LineHeight="1.5" TextColor="#8c91ab" FontSize="13" VerticalOptions="Center" VerticalTextAlignment="Center" Text="{Binding PortfolioDescription}" />
+                        <ff:CachedImage Source="{Binding DataImageSource}" HorizontalOptions="FillAndExpand" Margin="0,12,20,0" />
+                        <Label LineHeight="1.5" TextColor="#8c91ab" FontSize="24" VerticalOptions="Center" VerticalTextAlignment="Center" Text="{Binding PortfolioDescription}" />
                     </StackLayout>
                     <StackLayout Orientation="Horizontal" >
-                        <Label Text="{Binding DataPrice}" LineHeight="1.5" TextColor="#8c91ab" FontSize="13" VerticalOptions="Center" VerticalTextAlignment="Center" />
-                        <Button Text="Buy Now" />
+                        <Label Text="{Binding DataPrice}" LineHeight="1.5" TextColor="#8c91ab" FontSize="24" HorizontalOptions="Center" VerticalOptions="Center" VerticalTextAlignment="Center" />
+                        <Button Text="Buy Now" HorizontalOptions="Center" />
                     </StackLayout>
                     <!--Put socials and other info here-->
                 </StackLayout>

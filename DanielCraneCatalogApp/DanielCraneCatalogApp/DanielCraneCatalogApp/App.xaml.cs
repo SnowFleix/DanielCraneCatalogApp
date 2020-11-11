@@ -9,15 +9,6 @@ namespace DanielCraneCatalogApp
 {
     public partial class App : Application
     {
-        public static string ResourcePrefix = "";
-
-#if __IOS__
-		public static string ResourcePrefix = "XamFormsImageResize.iOS.";
-#endif
-#if __ANDROID__
-		public static string ResourcePrefix = "XamFormsImageResize.Android.";
-#endif
-
         public App()
         {
             List<ContentPage> pages = new List<ContentPage>(0);
@@ -29,8 +20,8 @@ namespace DanielCraneCatalogApp
             content.BackgroundImage = "SampleImage.png";
             content.ShortDescription = "Description of the image";
             content.DataTitle = "This is a title";
-            content.DataDescription = "This is an example of a description";
-            content.DataLongDescription = "This is a very long description about the image to the left which is kind of important";
+            content.DataDescription = "This is an example of a description, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sodales nisl at condimentum volutpat.";
+            content.DataLongDescription = "This is a very long description about the image to the left which is kind of important, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sodales nisl at condimentum volutpat. In bibendum mi in ligula consectetur mattis. Ut ultricies nisl sem, imperdiet rhoncus augue hendrerit nec. Nam cursus purus nec augue interdum fringilla ac non mi. Quisque sit amet massa vel sem tincidunt tincidunt nec sed quam.";
             content.DataImageSource = "StockImage.jpg";
             content.DataPrice = "£100.00";
             

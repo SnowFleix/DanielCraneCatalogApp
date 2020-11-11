@@ -147,4 +147,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties XamarinHotReloadWrongLinkerErrorInfoBarDanielCraneCatalogAppiOSHideInfoBar="True" />
+    </VisualStudio>
+  </ProjectExtensions>
 </Project>
