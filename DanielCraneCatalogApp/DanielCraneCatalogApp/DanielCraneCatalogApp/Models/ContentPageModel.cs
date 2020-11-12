@@ -13,6 +13,8 @@ namespace DanielCraneCatalogApp
         public string DataDescription { get; set; }
         public string DataLongDescription { get; set; }
         public string DataImageSource { get; set; }
+        public string DataPictureType { get; set; }
         public string DataPrice { get; set; }
+        public string PortfolioDescription { get; set; }
     }
 }

@@ -146,7 +146,48 @@
       <Name>DanielCraneCatalogApp</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <BundleResource Include="Resources\SampleImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\StockImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\TestImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\GateJumpTestImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\HoundPackTestImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\HoundTestImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\HouseHoldCavalryTestImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\HuntTestImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\RiderTestImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\StablesTestImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\WhatAChanceTestImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\BeachRidersTestImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\FoxTestImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ProfilePictureTestImage.png" />
+  </ItemGroup>
   <ProjectExtensions>
     <VisualStudio>
       <UserProperties XamarinHotReloadWrongLinkerErrorInfoBarDanielCraneCatalogAppiOSHideInfoBar="True" />

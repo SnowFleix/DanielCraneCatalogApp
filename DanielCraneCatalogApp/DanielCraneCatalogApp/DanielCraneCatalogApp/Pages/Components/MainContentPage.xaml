@@ -5,6 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:effect="clr-namespace:DanielCraneCatalogApp.Effects;assembly=DanielCraneCatalogApp" 
              xmlns:ff="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" 
+             xmlns:components="clr-namespace:DanielCraneCatalogApp;assembly=DanielCraneCatalogApp" 
              mc:Ignorable="d"
              x:Class="DanielCraneCatalogApp.MainContentPage">
     
@@ -33,25 +34,25 @@
                                     </RelativeLayout>
                                 </StackLayout>
                             </RelativeLayout>
-                            <Label Text="Scroll to know more" Padding="0,0,0,50" FontSize="12" TextColor="White" VerticalOptions="EndAndExpand" HorizontalOptions="Center" HorizontalTextAlignment="Center" />
+                            <Label Text="Scroll to know more" Padding="0,0,0,55" FontSize="12" TextColor="White" VerticalOptions="EndAndExpand" HorizontalOptions="Center" HorizontalTextAlignment="Center" />
                         </Grid>
                     </RelativeLayout>
                 </StackLayout>
-                <StackLayout Grid.Row="1" x:Name="DataWrapper" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="0,0,0,20">
-                    <Label Text="{Binding DataTitle}" FontSize="24" TextColor="Black" Margin="0,15,0,0" HorizontalOptions="Center" />
-                    <StackLayout Orientation="Horizontal">
-                        <Image x:Name="PaintingImage" HorizontalOptions="CenterAndExpand"/>
-                        <Label Text="{Binding DataDescription}" Margin="0,12,0,0" FontSize="24" TextColor="Black" HorizontalTextAlignment="Center" />
+                <StackLayout Grid.Row="1" x:Name="DataWrapper" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="0,0,0,20" >
+                    <Label Text="{Binding DataTitle}" FontSize="32" FontFamily="Raleway" TextColor="Black" Margin="0,25,0,0" HorizontalOptions="Center" />
+                    <StackLayout Orientation="Vertical" Padding="10,20,10,10" >
+                        <Image x:Name="PaintingImage" Source="{Binding BackgroundImage}" HorizontalOptions="CenterAndExpand" Margin="10,10,10,0" />
+                        <Label Text="{Binding DataPictureType}" Margin="10,0,0,0" FontSize="10" TextColor="#848482"/>
+                        <Label Text="{Binding DataDescription}" LineHeight="1.25" Margin="10,12,0,0" FontSize="16" TextColor="Black" HorizontalTextAlignment="Start" />
                     </StackLayout>
-                    <Label Text="{Binding DataLongDescription}" Margin="0,20,0,0" FontSize="16" TextColor="Black" />
-                    <StackLayout Orientation="Horizontal">
-                        <ff:CachedImage Source="{Binding DataImageSource}" HorizontalOptions="FillAndExpand" Margin="0,12,20,0" />
-                        <Label LineHeight="1.5" TextColor="#8c91ab" FontSize="24" VerticalOptions="Center" VerticalTextAlignment="Center" Text="{Binding PortfolioDescription}" />
+                    <StackLayout Orientation="Horizontal" Padding="10,20,10,20">
+                        <Label Text="{Binding PortfolioDescription}" LineHeight="1.25" TextColor="Black" FontSize="14" VerticalOptions="Center" VerticalTextAlignment="Center" />
+                        <ff:CachedImage Source="{Binding DataImageSource}" HorizontalOptions="FillAndExpand" Margin="0,12,20,0" VerticalOptions="Fill"/>
                     </StackLayout>
-                    <StackLayout Orientation="Horizontal" >
-                        <Label Text="{Binding DataPrice}" LineHeight="1.5" TextColor="#8c91ab" FontSize="24" HorizontalOptions="Center" VerticalOptions="Center" VerticalTextAlignment="Center" />
-                        <Button Text="Buy Now" HorizontalOptions="Center" />
-                    </StackLayout>
+                    <Grid Padding="0,20,0,0" >
+                        <Label Text="{Binding DataPrice}" Grid.Column="0" TextColor="Black" FontSize="24" HorizontalOptions="Center" VerticalOptions="Center" VerticalTextAlignment="Center" />
+                        <Button Text="Enquire" Grid.Column="1" HorizontalOptions="Center" />
+                    </Grid>
                     <!--Put socials and other info here-->
                 </StackLayout>
             </Grid>

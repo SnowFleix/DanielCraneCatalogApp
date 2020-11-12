@@ -28,6 +28,10 @@ namespace DanielCraneCatalogApp
 
             CoverWrapper.HeightRequest = deviceHeight;
             CoverWrapper.WidthRequest = deviceWidth;
+            DataWrapper.HeightRequest = deviceHeight;
+            DataWrapper.WidthRequest = deviceWidth;
+
+            PaintingImage.WidthRequest = (deviceWidth);
         }
     }
 }
